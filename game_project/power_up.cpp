@@ -67,3 +67,8 @@ power_up_data new_power_up(double x, double y)
 
   return result;
 }
+
+void draw_power_up(const power_up_data &power_up_to_draw)
+{
+  draw_sprite(power_up_to_draw.power_up_sprite);
+}
