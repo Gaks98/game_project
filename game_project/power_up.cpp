@@ -1,5 +1,5 @@
 #include "power_up.h"
-#include "player.h"
+// #include "player.h"
 #include "splashkit.h"
 
 void load_resources()
@@ -13,11 +13,11 @@ void load_resources()
 }
 
 // converts power_up_kinds values to images
-bitmap power_up_bitmap(power_up_data power_up)
+bitmap power_up_bitmap(power_up_kind kind)
 {
   string bitmap_name;
 
-  switch (power_up.kind)
+  switch (kind)
   {
   case FUEL:
     bitmap_name = "fuel";
@@ -41,27 +41,26 @@ bitmap power_up_bitmap(power_up_data power_up)
   return bitmap_named(bitmap_name);
 }
 
-// power_up_data new_power_up()
-// {
-//   power_up_data result;
-//   bitmap default_bitmap = ship_bitmap(AQUARII);
+power_up_data new_power_up(double x, double y)
+{
+  power_up_data result;
+  result.kind = static_cast<power_up_kind>(rnd(6));
+  bitmap default_bitmap = power_up_bitmap(result.kind);
 
-//   // Create the sprite with 3 layers - we can turn on and off based
-//   // on the ship kind selected
-//   result.power_up_sprite = create_sprite(default_bitmap);
+  // Create the sprite with 3 layers - we can turn on and off based
+  // on the ship kind selected
+  result.power_up_sprite = create_sprite(power_up_bitmap(result.kind));
 
-//   sprite_add_layer(result.power_up_sprite, ship_bitmap(GLIESE), "GLIESE");
-//   sprite_add_layer(result.power_up_sprite, ship_bitmap(PEGASI), "PEGASI");
+  // sprite_add_layer(result.power_up_sprite, power_up_bitmap(GLIESE), "GLIESE");
+  // sprite_add_layer(result.power_up_sprite, power_up_bitmap(PEGASI), "PEGASI");
 
-//   // Default to layer 0 = Aquarii so hide others
-//   sprite_hide_layer(result.power_up_sprite, 1);
-//   sprite_hide_layer(result.power_up_sprite, 2);
+  // Default to layer 0 = Aquarii so hide others
+  // sprite_hide_layer(result.power_up_sprite, 1);
+  // sprite_hide_layer(result.power_up_sprite, 2);
 
-//   result.kind = AQUARII;
+  // Position in the centre of the initial screen
+  sprite_set_x(result.power_up_sprite, x);
+  sprite_set_y(result.power_up_sprite, y);
 
-//   // Position in the centre of the initial screen
-//   sprite_set_x(result.power_up_sprite, 380);
-//   sprite_set_y(result.power_up_sprite, 380);
-
-//   return result;
-// }
+  return result;
+}
