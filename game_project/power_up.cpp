@@ -1,4 +1,5 @@
 #include "power_up.h"
+#include "player.h"
 #include "splashkit.h"
 
 void load_resources()
@@ -11,7 +12,8 @@ void load_resources()
   load_bitmap("star", "star.png");
 }
 
-bitmap light_bitmap(const power_up_data &power_up)
+// converts power_up_kinds values to images
+bitmap power_up_bitmap(power_up_data power_up)
 {
   string bitmap_name;
 
@@ -38,3 +40,28 @@ bitmap light_bitmap(const power_up_data &power_up)
 
   return bitmap_named(bitmap_name);
 }
+
+// power_up_data new_power_up()
+// {
+//   power_up_data result;
+//   bitmap default_bitmap = ship_bitmap(AQUARII);
+
+//   // Create the sprite with 3 layers - we can turn on and off based
+//   // on the ship kind selected
+//   result.power_up_sprite = create_sprite(default_bitmap);
+
+//   sprite_add_layer(result.power_up_sprite, ship_bitmap(GLIESE), "GLIESE");
+//   sprite_add_layer(result.power_up_sprite, ship_bitmap(PEGASI), "PEGASI");
+
+//   // Default to layer 0 = Aquarii so hide others
+//   sprite_hide_layer(result.power_up_sprite, 1);
+//   sprite_hide_layer(result.power_up_sprite, 2);
+
+//   result.kind = AQUARII;
+
+//   // Position in the centre of the initial screen
+//   sprite_set_x(result.power_up_sprite, 380);
+//   sprite_set_y(result.power_up_sprite, 380);
+
+//   return result;
+// }
