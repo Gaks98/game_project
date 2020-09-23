@@ -32,6 +32,8 @@ void load_resources();
 
 power_up_data new_power_up(double x, double y);
 
-void draw_player(const power_up_data &power_up_to_draw);
+void draw_power_up(const power_up_data &power_up_to_draw);
+
+void update_power_up(power_up_data &power_up_to_update);
 
 #endif
