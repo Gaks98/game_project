@@ -114,6 +114,8 @@ void handle_input(player_data &player)
     // Allow the player to switch ships
     if (key_typed(NUM_1_KEY))
         player_switch_to_ship(player, AQUARII);
+    if (key_typed(NUM_2_KEY))
+        player_switch_to_ship(player, GLIESE);
     if (key_typed(NUM_3_KEY))
         player_switch_to_ship(player, PEGASI);
 
