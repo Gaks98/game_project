@@ -16,4 +16,8 @@ enum power_up_kind
   STAR
 }
 
+
+// converts power_up_kinds values to images
+power_up_bitmap(const power_up_data &power_up);
+
 #endif
