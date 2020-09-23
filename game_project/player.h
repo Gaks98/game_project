@@ -35,12 +35,14 @@ struct player_data
     ship_kind   kind;
 };
 
-/**
+bitmap ship_bitmap(ship_kind kind)
+
+    /**
  * Creates a new player in the centre of the screen with the default ship.
  * 
  * @returns     The new player data
  */
-player_data new_player();
+    player_data new_player();
 
 /**
  * Draws the player to the screen. 
