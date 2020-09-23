@@ -42,8 +42,8 @@ player_data new_player()
     result.kind = AQUARII;
 
     // Position in the centre of the initial screen
-    sprite_set_x(result.player_sprite, 400);
-    sprite_set_y(result.player_sprite, 400);
+    sprite_set_x(result.player_sprite, 380);
+    sprite_set_y(result.player_sprite, 380);
 
     return result;
 }
