@@ -29,8 +29,9 @@ struct power_up_data
 };
 
 // converts power_up_kinds values to images
-power_up_data power_up_bitmap(const power_up_data &power_up);
 
 void load_resources();
+
+power_up_data new_power_up();
 
 #endif
