@@ -14,10 +14,23 @@ enum power_up_kind
   POTION,
   DIAMOND,
   STAR
-}
+};
 
+/**
+ * The power_up_data keeps track of all of the information related to the power_up.
+ * 
+ * @field   power_up_sprite   The power_up's sprite - used to track position and movement
+ * @field   kind            Current kind of power_up 
+ */
+struct power_up_data
+{
+  sprite power_up_sprite;
+  power_up_kind kind;
+};
 
 // converts power_up_kinds values to images
-power_up_bitmap(const power_up_data &power_up);
+power_up_data power_up_bitmap(const power_up_data &power_up);
+
+void load_resources();
 
 #endif
