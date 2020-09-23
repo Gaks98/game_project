@@ -62,5 +62,8 @@ power_up_data new_power_up(double x, double y)
   sprite_set_x(result.power_up_sprite, x);
   sprite_set_y(result.power_up_sprite, y);
 
+  //start power-ups with small random velocity
+  sprite_set_dx(result.power_up_sprite, rnd() * 4 -2);
+
   return result;
 }
