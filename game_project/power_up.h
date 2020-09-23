@@ -6,5 +6,14 @@
 
 using namespace std;
 
+enum power_up_kind
+{
+  FUEL,
+  SHIELD,
+  POWER,
+  POTION,
+  DIAMOND,
+  STAR
+}
 
 #endif
