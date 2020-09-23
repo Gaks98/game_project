@@ -1,5 +1,5 @@
 #include "power_up.h"
-// #include "player.h"
+// #include "power_up.h"
 #include "splashkit.h"
 
 void load_resources()
@@ -71,4 +71,11 @@ power_up_data new_power_up(double x, double y)
 void draw_power_up(const power_up_data &power_up_to_draw)
 {
   draw_sprite(power_up_to_draw.power_up_sprite);
+}
+
+void update_power_up(power_up_data &power_up_to_update)
+{
+  // Apply movement based on rotation and velocity in the sprite
+  update_sprite(power_up_to_update.power_up_sprite);
+
 }
