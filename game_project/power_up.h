@@ -28,10 +28,8 @@ struct power_up_data
   power_up_kind kind;
 };
 
-// converts power_up_kinds values to images
-
 void load_resources();
 
-power_up_data new_power_up();
+power_up_data new_power_up(double x, double y);
 
 #endif
